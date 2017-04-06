@@ -1,0 +1,4558 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://nodegh.io">gh (v1.12.8)</a>
+</h1>
+<h4>GitHub command line tools.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh">module gh</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd_anonymizer">
+            function <span class="apidocSignatureSpan">gh.</span>cmd_anonymizer
+            <span class="apidocSignatureSpan">(commandDetails, redaction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client">
+            function <span class="apidocSignatureSpan">gh.</span>rest_api_client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>base</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>cmd</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>cmd_anonymizer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>configs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>exec</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>git</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>hooks</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>logger</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>rest_api_client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.</span>tracker</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.base">module gh.base</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.asyncReadPackages">
+            function <span class="apidocSignatureSpan">gh.base.</span>asyncReadPackages
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.checkVersion">
+            function <span class="apidocSignatureSpan">gh.base.</span>checkVersion
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.clone">
+            function <span class="apidocSignatureSpan">gh.base.</span>clone
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.expandAliases">
+            function <span class="apidocSignatureSpan">gh.base.</span>expandAliases
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.find">
+            function <span class="apidocSignatureSpan">gh.base.</span>find
+            <span class="apidocSignatureSpan">(filepath, opt_pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.getConfig">
+            function <span class="apidocSignatureSpan">gh.base.</span>getConfig
+            <span class="apidocSignatureSpan">(opt_plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.getUser">
+            function <span class="apidocSignatureSpan">gh.base.</span>getUser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.load">
+            function <span class="apidocSignatureSpan">gh.base.</span>load
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.notifyVersion">
+            function <span class="apidocSignatureSpan">gh.base.</span>notifyVersion
+            <span class="apidocSignatureSpan">(pkg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.base.writeGlobalConfig">
+            function <span class="apidocSignatureSpan">gh.base.</span>writeGlobalConfig
+            <span class="apidocSignatureSpan">(jsonPath, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.cmd">module gh.cmd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd.run">
+            function <span class="apidocSignatureSpan">gh.cmd.</span>run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd.setUp">
+            function <span class="apidocSignatureSpan">gh.cmd.</span>setUp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.cmd_anonymizer">module gh.cmd_anonymizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd_anonymizer.cmd_anonymizer">
+            function <span class="apidocSignatureSpan">gh.</span>cmd_anonymizer
+            <span class="apidocSignatureSpan">(commandDetails, redaction)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.cmd_anonymizer.prototype">module gh.cmd_anonymizer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd_anonymizer.prototype.classify">
+            function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>classify
+            <span class="apidocSignatureSpan">(word)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd_anonymizer.prototype.extractArgument">
+            function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>extractArgument
+            <span class="apidocSignatureSpan">(word)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd_anonymizer.prototype.isOptionValue">
+            function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>isOptionValue
+            <span class="apidocSignatureSpan">(option, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd_anonymizer.prototype.isValueInOptions">
+            function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>isValueInOptions
+            <span class="apidocSignatureSpan">(options, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd_anonymizer.prototype.resolve">
+            function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>resolve
+            <span class="apidocSignatureSpan">(cmd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.cmd_anonymizer.prototype.resolveToString">
+            function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>resolveToString
+            <span class="apidocSignatureSpan">(cmd)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.configs">module gh.configs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.addPluginConfig">
+            function <span class="apidocSignatureSpan">gh.configs.</span>addPluginConfig
+            <span class="apidocSignatureSpan">(config, plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.createGlobalConfig">
+            function <span class="apidocSignatureSpan">gh.configs.</span>createGlobalConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getConfig">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getConfig
+            <span class="apidocSignatureSpan">(opt_plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getGlobalConfig">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getGlobalConfig
+            <span class="apidocSignatureSpan">(opt_plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getGlobalConfigPath">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getGlobalConfigPath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getNodeModulesGlobalPath">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getNodeModulesGlobalPath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getPlugin">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getPlugin
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getPluginBasename">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getPluginBasename
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getPluginPath">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getPluginPath
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getPlugins">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getPlugins
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getProjectConfigPath">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getProjectConfigPath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.getUserHomePath">
+            function <span class="apidocSignatureSpan">gh.configs.</span>getUserHomePath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.isPluginIgnored">
+            function <span class="apidocSignatureSpan">gh.configs.</span>isPluginIgnored
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.removeGlobalConfig">
+            function <span class="apidocSignatureSpan">gh.configs.</span>removeGlobalConfig
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.saveJsonConfig">
+            function <span class="apidocSignatureSpan">gh.configs.</span>saveJsonConfig
+            <span class="apidocSignatureSpan">(path, object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.writeGlobalConfig">
+            function <span class="apidocSignatureSpan">gh.configs.</span>writeGlobalConfig
+            <span class="apidocSignatureSpan">(jsonPath, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.configs.writeGlobalConfigCredentials">
+            function <span class="apidocSignatureSpan">gh.configs.</span>writeGlobalConfigCredentials
+            <span class="apidocSignatureSpan">(user, token)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gh.configs.</span>PLUGINS_PATH_KEY</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.exec">module gh.exec</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.exec.execSync">
+            function <span class="apidocSignatureSpan">gh.exec.</span>execSync
+            <span class="apidocSignatureSpan">(cmd, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.exec.execSyncInteractiveStream">
+            function <span class="apidocSignatureSpan">gh.exec.</span>execSyncInteractiveStream
+            <span class="apidocSignatureSpan">(cmd, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.exec.spawnSync">
+            function <span class="apidocSignatureSpan">gh.exec.</span>spawnSync
+            <span class="apidocSignatureSpan">(cmd, args, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.exec.spawnSyncStream">
+            function <span class="apidocSignatureSpan">gh.exec.</span>spawnSyncStream
+            <span class="apidocSignatureSpan">(cmd, args, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.git">module gh.git</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git._merge">
+            function <span class="apidocSignatureSpan">gh.git.</span>_merge
+            <span class="apidocSignatureSpan">(branch, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.checkout">
+            function <span class="apidocSignatureSpan">gh.git.</span>checkout
+            <span class="apidocSignatureSpan">(branch, newBranch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.clone">
+            function <span class="apidocSignatureSpan">gh.git.</span>clone
+            <span class="apidocSignatureSpan">(url, folder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.countUserAdjacentCommits">
+            function <span class="apidocSignatureSpan">gh.git.</span>countUserAdjacentCommits
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.deleteBranch">
+            function <span class="apidocSignatureSpan">gh.git.</span>deleteBranch
+            <span class="apidocSignatureSpan">(branch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.fetch">
+            function <span class="apidocSignatureSpan">gh.git.</span>fetch
+            <span class="apidocSignatureSpan">(repoUrl, headBranch, pullBranch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.findRoot">
+            function <span class="apidocSignatureSpan">gh.git.</span>findRoot
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getCommitMessage">
+            function <span class="apidocSignatureSpan">gh.git.</span>getCommitMessage
+            <span class="apidocSignatureSpan">(branch, number)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getConfig">
+            function <span class="apidocSignatureSpan">gh.git.</span>getConfig
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getCurrentBranch">
+            function <span class="apidocSignatureSpan">gh.git.</span>getCurrentBranch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getLastCommitMessage">
+            function <span class="apidocSignatureSpan">gh.git.</span>getLastCommitMessage
+            <span class="apidocSignatureSpan">(branch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getLastCommitSHA">
+            function <span class="apidocSignatureSpan">gh.git.</span>getLastCommitSHA
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getRemoteUrl">
+            function <span class="apidocSignatureSpan">gh.git.</span>getRemoteUrl
+            <span class="apidocSignatureSpan">(remote)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getRepo">
+            function <span class="apidocSignatureSpan">gh.git.</span>getRepo
+            <span class="apidocSignatureSpan">(remote)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getRepoFromRemoteURL">
+            function <span class="apidocSignatureSpan">gh.git.</span>getRepoFromRemoteURL
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getUser">
+            function <span class="apidocSignatureSpan">gh.git.</span>getUser
+            <span class="apidocSignatureSpan">(remote)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.getUserFromRemoteUrl">
+            function <span class="apidocSignatureSpan">gh.git.</span>getUserFromRemoteUrl
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.merge">
+            function <span class="apidocSignatureSpan">gh.git.</span>merge
+            <span class="apidocSignatureSpan">(branch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.parseRemoteUrl">
+            function <span class="apidocSignatureSpan">gh.git.</span>parseRemoteUrl
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.push">
+            function <span class="apidocSignatureSpan">gh.git.</span>push
+            <span class="apidocSignatureSpan">(remote, branch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.git.rebase">
+            function <span class="apidocSignatureSpan">gh.git.</span>rebase
+            <span class="apidocSignatureSpan">(branch)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.hooks">module gh.hooks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.hooks.createContext">
+            function <span class="apidocSignatureSpan">gh.hooks.</span>createContext
+            <span class="apidocSignatureSpan">(scope)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.hooks.getHooksArrayFromPath_">
+            function <span class="apidocSignatureSpan">gh.hooks.</span>getHooksArrayFromPath_
+            <span class="apidocSignatureSpan">(path, opt_config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.hooks.getHooksFromPath">
+            function <span class="apidocSignatureSpan">gh.hooks.</span>getHooksFromPath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.hooks.invoke">
+            function <span class="apidocSignatureSpan">gh.hooks.</span>invoke
+            <span class="apidocSignatureSpan">(path, scope, opt_callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.hooks.setupPlugins_">
+            function <span class="apidocSignatureSpan">gh.hooks.</span>setupPlugins_
+            <span class="apidocSignatureSpan">(context, setupFn, opt_callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.hooks.wrapCommand_">
+            function <span class="apidocSignatureSpan">gh.hooks.</span>wrapCommand_
+            <span class="apidocSignatureSpan">(cmd, context, when)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.logger">module gh.logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.applyReplacements">
+            function <span class="apidocSignatureSpan">gh.logger.</span>applyReplacements
+            <span class="apidocSignatureSpan">(output, replaceMap)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.compileTemplate">
+            function <span class="apidocSignatureSpan">gh.logger.</span>compileTemplate
+            <span class="apidocSignatureSpan">(source, map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.debug">
+            function <span class="apidocSignatureSpan">gh.logger.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.error">
+            function <span class="apidocSignatureSpan">gh.logger.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.getDuration">
+            function <span class="apidocSignatureSpan">gh.logger.</span>getDuration
+            <span class="apidocSignatureSpan">(start, opt_end)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.getErrorMessage">
+            function <span class="apidocSignatureSpan">gh.logger.</span>getErrorMessage
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.insane">
+            function <span class="apidocSignatureSpan">gh.logger.</span>insane
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.log">
+            function <span class="apidocSignatureSpan">gh.logger.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.logTemplate">
+            function <span class="apidocSignatureSpan">gh.logger.</span>logTemplate
+            <span class="apidocSignatureSpan">(source, map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.logTemplateFile">
+            function <span class="apidocSignatureSpan">gh.logger.</span>logTemplateFile
+            <span class="apidocSignatureSpan">(file, map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.registerHelper">
+            function <span class="apidocSignatureSpan">gh.logger.</span>registerHelper
+            <span class="apidocSignatureSpan">(name, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.registerHelpers_">
+            function <span class="apidocSignatureSpan">gh.logger.</span>registerHelpers_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.logger.warn">
+            function <span class="apidocSignatureSpan">gh.logger.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.logger.</span>colors</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.rest_api_client">module gh.rest_api_client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.rest_api_client">
+            function <span class="apidocSignatureSpan">gh.</span>rest_api_client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.rest_api_client.prototype">module gh.rest_api_client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.prototype.authorize">
+            function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>authorize
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.prototype.delete">
+            function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>delete
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.prototype.encode">
+            function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>encode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.prototype.get">
+            function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.prototype.post">
+            function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>post
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.prototype.put">
+            function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>put
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.prototype.request">
+            function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>request
+            <span class="apidocSignatureSpan">(method, path, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.rest_api_client.prototype.url">
+            function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>url
+            <span class="apidocSignatureSpan">(pathname, query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>DEFAULT_CONFIG</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gh.tracker">module gh.tracker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.tracker.resolveCommand">
+            function <span class="apidocSignatureSpan">gh.tracker.</span>resolveCommand
+            <span class="apidocSignatureSpan">(cmd, commandDetails)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gh.tracker.trackCommand">
+            function <span class="apidocSignatureSpan">gh.tracker.</span>trackCommand
+            <span class="apidocSignatureSpan">(cmd, commandDetails)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">gh.tracker.</span>_permissionTimeout</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.tracker.</span>_queue</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gh.tracker.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gh.tracker.</span>appVersion</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gh.tracker.</span>nodeVersion</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gh.tracker.</span>os</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gh.tracker.</span>packageName</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gh.tracker.</span>packageVersion</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gh.tracker.</span>trackingCode</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gh.tracker.</span>trackingProvider</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh" id="apidoc.module.gh">module gh</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd_anonymizer" id="apidoc.element.gh.cmd_anonymizer">
+        function <span class="apidocSignatureSpan">gh.</span>cmd_anonymizer
+        <span class="apidocSignatureSpan">(commandDetails, redaction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CmdAnonymizer(commandDetails, redaction) {
+    this.last = null;
+    this.invoked = [];
+    this.redaction = redaction;
+    this.options = commandDetails.options;
+    this.shorthands = commandDetails.shorthands;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client" id="apidoc.element.gh.rest_api_client">
+        function <span class="apidocSignatureSpan">gh.</span>rest_api_client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RestApiClient(options) {
+    _classCallCheck(this, RestApiClient);
+
+    options = lodash.merge(this.DEFAULT_CONFIG, options);
+    this.options = options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.base" id="apidoc.module.gh.base">module gh.base</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.asyncReadPackages" id="apidoc.element.gh.base.asyncReadPackages">
+        function <span class="apidocSignatureSpan">gh.base.</span>asyncReadPackages
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asyncReadPackages = function (callback) {
+    function async(err, data) {
+        if (err) {
+            throw err;
+        }
+
+        callback(JSON.parse(data));
+    }
+
+    fs.readFile(path.join(__dirname, '..', 'package.json'), async);
+
+    configs.getPlugins().forEach(function (plugin) {
+        fs.readFile(path.join(
+            configs.getNodeModulesGlobalPath(), plugin, 'package.json'), async);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    tracker.track(track);
+
+    notifier.notify();
+}
+};
+
+exports.checkVersion = function () {
+exports.<span class="apidocCodeKeywordSpan">asyncReadPackages</span>(exports.notifyVersion);
+};
+
+exports.expandAliases = function (options) {
+var config = configs.getConfig();
+
+if (config.alias) {
+    options.fwd = config.alias[options.fwd] || options.fwd;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.checkVersion" id="apidoc.element.gh.base.checkVersion">
+        function <span class="apidocSignatureSpan">gh.base.</span>checkVersion
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkVersion = function () {
+    exports.asyncReadPackages(exports.notifyVersion);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+operations = [],
+options,
+parsed = nopt(process.argv),
+remain = parsed.argv.remain,
+cooked = parsed.argv.cooked;
+
+    operations.push(function (callback) {
+base.<span class="apidocCodeKeywordSpan">checkVersion</span>();
+
+if (tracker.optOut !== undefined) {
+    callback();
+    return;
+}
+
+tracker.askPermission(null, function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.clone" id="apidoc.element.gh.base.clone">
+        function <span class="apidocSignatureSpan">gh.base.</span>clone
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (o) {
+    return JSON.parse(JSON.stringify(o));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        // Try to retrieve iterative values from iterative option key,
+        // e.g. option['number'] === [1,2,3]. If iterative option key is not
+        // present, assume [undefined] in order to initialize the loop.
+        iterativeValues = options[iterative] || [undefined];
+
+        iterativeValues.forEach(function (value) {
+options = base.<span class="apidocCodeKeywordSpan">clone</span>(options);
+
+// Value can be undefined when the command doesn't have a iterative
+// option.
+options[iterative] = value;
+
+invokePayload(options, Command, cooked, remain);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.expandAliases" id="apidoc.element.gh.base.expandAliases">
+        function <span class="apidocSignatureSpan">gh.base.</span>expandAliases
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expandAliases = function (options) {
+    var config = configs.getConfig();
+
+    if (config.alias) {
+        options.fwd = config.alias[options.fwd] || options.fwd;
+        options.submit = config.alias[options.submit] || options.submit;
+        options.user = config.alias[options.user] || options.user;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        options.user = options.remoteUser || options.loggedUser;
+    }
+}
+
+options.repo = options.repo || git.getRepoFromRemoteURL(remoteUrl);
+options.currentBranch = options.currentBranch || git.getCurrentBranch();
+
+base.<span class="apidocCodeKeywordSpan">expandAliases</span>(options);
+options.github_host = config.github_host;
+options.github_gist_host = config.github_gist_host;
+
+// Try to retrieve iterative values from iterative option key,
+// e.g. option['number'] === [1,2,3]. If iterative option key is not
+// present, assume [undefined] in order to initialize the loop.
+iterativeValues = options[iterative] || [undefined];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.find" id="apidoc.element.gh.base.find">
+        function <span class="apidocSignatureSpan">gh.base.</span>find
+        <span class="apidocSignatureSpan">(filepath, opt_pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (filepath, opt_pattern) {
+    return fs.readdirSync(filepath).filter(function (file) {
+        return (opt_pattern || /.*/).test(file);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    commandDir = path.join(__dirname, 'cmds');
+    commandPath = path.join(commandDir, name + '.js');
+
+    if (fs.existsSync(commandPath)) {
+        Command = require(commandPath).Impl;
+    }
+    else {
+        commandFiles = base.<span class="apidocCodeKeywordSpan">find</span>(commandDir, /\.js$/i);
+        commandFiles.every(function (file) {
+commandPath = path.join(commandDir, file);
+Command = require(commandPath).Impl;
+
+if (Command.DETAILS.alias === name) {
+    return false;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.getConfig" id="apidoc.element.gh.base.getConfig">
+        function <span class="apidocSignatureSpan">gh.base.</span>getConfig
+        <span class="apidocSignatureSpan">(opt_plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfig = function (opt_plugin) {
+    var config = cache[opt_plugin];
+
+    if (!config) {
+        config = getConfig(opt_plugin);
+        cache[opt_plugin] = config;
+    }
+
+    var protocol = config.api.protocol + '://',
+        is_enterprise = (config.api.host !== 'api.github.com');
+
+    if (config.github_host === undefined) {
+        config.github_host = protocol + (is_enterprise ? config.api.host : 'github.com') + '/';
+    }
+    if (config.github_gist_host === undefined) {
+        config.github_gist_host = protocol + (is_enterprise ? config.api.host + '/gist' : 'gist.github.com') + '/';
+    }
+
+    return config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.clone = function (o) {
+return JSON.parse(JSON.stringify(o));
+};
+
+// -- Utils --------------------------------------------------------------------
+
+exports.load = function () {
+var config = configs.<span class="apidocCodeKeywordSpan">getConfig</span>();
+
+exports.github = new Github({
+    debug: false,
+    host: config.api.host,
+    protocol: config.api.protocol,
+    version: config.api.version,
+    pathPrefix: config.api.pathPrefix
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.getUser" id="apidoc.element.gh.base.getUser">
+        function <span class="apidocSignatureSpan">gh.base.</span>getUser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUser = function () {
+    return configs.getConfig().github_user;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    async.series(operations, function () {
+var iterativeValues,
+    remoteUrl = git.getRemoteUrl(options.remote);
+
+options.isTTY = {};
+options.isTTY.in = Boolean(process.stdin.isTTY);
+options.isTTY.out = Boolean(process.stdout.isTTY);
+options.loggedUser = base.<span class="apidocCodeKeywordSpan">getUser</span>();
+options.remoteUser = git.getUserFromRemoteUrl(remoteUrl);
+
+if (!options.user) {
+    if (options.repo || options.all) {
+        options.user = options.loggedUser;
+    }
+    else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.load" id="apidoc.element.gh.base.load">
+        function <span class="apidocSignatureSpan">gh.base.</span>load
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function () {
+    var config = configs.getConfig();
+
+    exports.github = new Github({
+        debug: false,
+        host: config.api.host,
+        protocol: config.api.protocol,
+        version: config.api.version,
+        pathPrefix: config.api.pathPrefix
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+exports.run = function () {
+if (!fs.existsSync(configs.getUserHomePath())) {
+    configs.createGlobalConfig();
+}
+
+base.<span class="apidocCodeKeywordSpan">load</span>();
+configs.getConfig();
+
+// If configs.PLUGINS_PATH_KEY is undefined, try to cache it before proceeding.
+if (configs.getConfig()[configs.PLUGINS_PATH_KEY] === undefined) {
+    configs.getNodeModulesGlobalPath();
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.notifyVersion" id="apidoc.element.gh.base.notifyVersion">
+        function <span class="apidocSignatureSpan">gh.base.</span>notifyVersion
+        <span class="apidocSignatureSpan">(pkg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notifyVersion = function (pkg) {
+    var notifier = updateNotifier({pkg: pkg}),
+        update,
+        track = 'notify/';
+
+    if (notifier.update) {
+        update = notifier.update;
+
+        track += update.name + '/' + update.latest + '/from/' + update.current;
+
+        tracker.track(track);
+
+        notifier.notify();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.base.writeGlobalConfig" id="apidoc.element.gh.base.writeGlobalConfig">
+        function <span class="apidocSignatureSpan">gh.base.</span>writeGlobalConfig
+        <span class="apidocSignatureSpan">(jsonPath, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeGlobalConfig = function (jsonPath, value) {
+    var config = exports.getGlobalConfig(),
+        i,
+        output,
+        path,
+        pathLen;
+
+    path = jsonPath.split('.');
+    output = config;
+
+    for (i = 0, pathLen = path.length; i &lt; pathLen; i++) {
+        output[path[i]] = config[path[i]] || (i + 1 === pathLen ? value : {});
+        output = output[path[i]];
+    }
+
+    exports.saveJsonConfig(exports.getUserHomePath(), config);
+    cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    path = exports.getConfig()[PLUGINS_PATH_KEY];
+
+if (path === undefined) {
+    result = exec.spawnSync('npm', ['root', '-g']);
+
+    if (result.stdout) {
+        path = result.stdout;
+        exports.<span class="apidocCodeKeywordSpan">writeGlobalConfig</span>(PLUGINS_PATH_KEY, path);
+    }
+    else {
+        logger.warn('Can\'t resolve plugins directory path.');
+    }
+}
+
+return path;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.cmd" id="apidoc.module.gh.cmd">module gh.cmd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd.run" id="apidoc.element.gh.cmd.run">
+        function <span class="apidocSignatureSpan">gh.cmd.</span>run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function () {
+    if (!fs.existsSync(configs.getUserHomePath())) {
+        configs.createGlobalConfig();
+    }
+
+    base.load();
+    configs.getConfig();
+
+    // If configs.PLUGINS_PATH_KEY is undefined, try to cache it before proceeding.
+    if (configs.getConfig()[configs.PLUGINS_PATH_KEY] === undefined) {
+        configs.getNodeModulesGlobalPath();
+    }
+
+    try {
+        process.env.GH_PATH = path.join(__dirname, '../');
+
+        this.setUp();
+    } catch (e) {
+        tracker.track('error');
+        console.error(e.stack || e);
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+            // Value can be undefined when the command doesn't have a iterative
+            // option.
+            options[iterative] = value;
+
+            invokePayload(options, Command, cooked, remain);
+
+            new Command(options).<span class="apidocCodeKeywordSpan">run</span>();
+
+            tracker.trackCommand(options.argv.original, Command.DETAILS);
+        });
+    });
+};
+
+exports.run = function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd.setUp" id="apidoc.element.gh.cmd.setUp">
+        function <span class="apidocSignatureSpan">gh.cmd.</span>setUp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setUp = function () {
+    var Command,
+        iterative,
+        operations = [],
+        options,
+        parsed = nopt(process.argv),
+        remain = parsed.argv.remain,
+        cooked = parsed.argv.cooked;
+
+    operations.push(function (callback) {
+        base.checkVersion();
+
+        if (tracker.optOut !== undefined) {
+            callback();
+            return;
+        }
+
+        tracker.askPermission(null, function () {
+            callback();
+        });
+    });
+
+    operations.push(function (callback) {
+        var module = remain[0];
+
+        if (cooked[0] === '--version' || cooked[0] === '-v') {
+            module = 'version';
+        }
+        else if (!remain.length ||
+            (cooked.indexOf('-h') &gt;= 0) ||
+            (cooked.indexOf('--help') &gt;= 0)) {
+            module = 'help';
+        }
+
+        Command = loadCommand(module);
+
+        if (!Command) {
+            tracker.trackCommand(remain);
+            logger.error('Command not found');
+            return;
+        }
+
+        options = nopt(
+            Command.DETAILS.options,
+            Command.DETAILS.shorthands, process.argv, 2);
+
+        iterative = Command.DETAILS.iterative;
+
+        cooked = options.argv.cooked;
+        remain = options.argv.remain;
+
+        options.number = options.number || [remain[1]];
+        options.remote = options.remote || config.default_remote;
+
+        if (module === 'help') {
+            callback();
+        }
+        else {
+            User.login(callback);
+        }
+    });
+
+    async.series(operations, function () {
+        var iterativeValues,
+            remoteUrl = git.getRemoteUrl(options.remote);
+
+        options.isTTY = {};
+        options.isTTY.in = Boolean(process.stdin.isTTY);
+        options.isTTY.out = Boolean(process.stdout.isTTY);
+        options.loggedUser = base.getUser();
+        options.remoteUser = git.getUserFromRemoteUrl(remoteUrl);
+
+        if (!options.user) {
+            if (options.repo || options.all) {
+                options.user = options.loggedUser;
+            }
+            else {
+                options.user = options.remoteUser || options.loggedUser;
+            }
+        }
+
+        options.repo = options.repo || git.getRepoFromRemoteURL(remoteUrl);
+        options.currentBranch = options.currentBranch || git.getCurrentBranch();
+
+        base.expandAliases(options);
+        options.github_host = config.github_host;
+        options.github_gist_host = config.github_gist_host;
+
+        // Try to retrieve iterative values from iterative option key,
+        // e.g. option['number'] === [1,2,3]. If iterative option key is not
+        // present, assume [undefined] in order to initialize the loop.
+        iterativeValues = options[iterative] || [undefined];
+
+        iterativeValues.forEach(function (value) {
+            options = base.clone(options);
+
+            // Value can be undefined when the command doesn't have a iterative
+            // option.
+            options[iterative] = value;
+
+            invokePayload(options, Command, cooked, remain);
+
+            new Command(options).run();
+
+            tracker.trackCommand(options.argv.original, Command.DETAILS);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (configs.getConfig()[configs.PLUGINS_PATH_KEY] === undefined) {
+        configs.getNodeModulesGlobalPath();
+    }
+
+    try {
+        process.env.GH_PATH = path.join(__dirname, '../');
+
+        this.<span class="apidocCodeKeywordSpan">setUp</span>();
+    } catch (e) {
+        tracker.track('error');
+        console.error(e.stack || e);
+    }
+
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.cmd_anonymizer" id="apidoc.module.gh.cmd_anonymizer">module gh.cmd_anonymizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd_anonymizer.cmd_anonymizer" id="apidoc.element.gh.cmd_anonymizer.cmd_anonymizer">
+        function <span class="apidocSignatureSpan">gh.</span>cmd_anonymizer
+        <span class="apidocSignatureSpan">(commandDetails, redaction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CmdAnonymizer(commandDetails, redaction) {
+    this.last = null;
+    this.invoked = [];
+    this.redaction = redaction;
+    this.options = commandDetails.options;
+    this.shorthands = commandDetails.shorthands;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.cmd_anonymizer.prototype" id="apidoc.module.gh.cmd_anonymizer.prototype">module gh.cmd_anonymizer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd_anonymizer.prototype.classify" id="apidoc.element.gh.cmd_anonymizer.prototype.classify">
+        function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>classify
+        <span class="apidocSignatureSpan">(word)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">classify = function (word) {
+    var arg = this.extractArgument(word),
+        whitelist = ['verbose', 'no-hooks'];
+
+    if (whitelist.indexOf(arg) === 0) {
+        this.invoked.push(word);
+        this.last = arg;
+        return;
+    }
+
+    if (this.shorthands &amp;&amp; this.shorthands[arg]) {
+        this.invoked.push(word);
+        this.last = this.shorthands[arg];
+        return;
+    }
+
+    if (this.options &amp;&amp; this.options[arg]) {
+        this.invoked.push(word);
+        this.last = arg;
+        return;
+    }
+
+    if (this.options &amp;&amp; this.isValueInOptions(this.last, word)) {
+        this.invoked.push(word);
+        this.last = undefined;
+        return;
+    }
+
+    if (this.options &amp;&amp; this.options[this.last] instanceof Array &amp;&amp;
+        this.options[this.last].indexOf(word) !== -1) {
+        this.invoked.push(word);
+        this.last = undefined;
+        return;
+    }
+
+    this.invoked.push(this.redaction);
+    this.last = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd_anonymizer.prototype.extractArgument" id="apidoc.element.gh.cmd_anonymizer.prototype.extractArgument">
+        function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>extractArgument
+        <span class="apidocSignatureSpan">(word)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractArgument = function (word) {
+    return word.replace(/-{0,2}/, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+CmdAnonymizer.prototype.isValueInOptions = function (options, value) {
+if (!(options instanceof Array)) {
+    return this.isOptionValue(options, value);
+}
+
+return options.some(function (each) {
+    return this.isOptionValue(this.<span class="apidocCodeKeywordSpan">extractArgument</span>(each), value);
+}, this);
+};
+
+CmdAnonymizer.prototype.classify = function (word) {
+var arg = this.extractArgument(word),
+    whitelist = ['verbose', 'no-hooks'];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd_anonymizer.prototype.isOptionValue" id="apidoc.element.gh.cmd_anonymizer.prototype.isOptionValue">
+        function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>isOptionValue
+        <span class="apidocSignatureSpan">(option, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isOptionValue = function (option, value) {
+    var choice = this.options[option],
+        booleans = ['true', 'false'];
+
+    return ((choice instanceof Array &amp;&amp; choice.indexOf(value) !== -1) ||
+        (choice === Boolean &amp;&amp; booleans.indexOf(value.toLowerCase()) !== -1) ||
+        (typeof choice === 'string' &amp;&amp; choice === value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return ((choice instanceof Array &amp;&amp; choice.indexOf(value) !== -1) ||
+        (choice === Boolean &amp;&amp; booleans.indexOf(value.toLowerCase()) !== -1) ||
+        (typeof choice === 'string' &amp;&amp; choice === value));
+};
+
+CmdAnonymizer.prototype.isValueInOptions = function (options, value) {
+    if (!(options instanceof Array)) {
+        return this.<span class="apidocCodeKeywordSpan">isOptionValue</span>(options, value);
+    }
+
+    return options.some(function (each) {
+        return this.isOptionValue(this.extractArgument(each), value);
+    }, this);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd_anonymizer.prototype.isValueInOptions" id="apidoc.element.gh.cmd_anonymizer.prototype.isValueInOptions">
+        function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>isValueInOptions
+        <span class="apidocSignatureSpan">(options, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValueInOptions = function (options, value) {
+    if (!(options instanceof Array)) {
+        return this.isOptionValue(options, value);
+    }
+
+    return options.some(function (each) {
+        return this.isOptionValue(this.extractArgument(each), value);
+    }, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (this.options &amp;&amp; this.options[arg]) {
+    this.invoked.push(word);
+    this.last = arg;
+    return;
+}
+
+if (this.options &amp;&amp; this.<span class="apidocCodeKeywordSpan">isValueInOptions</span>(this.last, word)) {
+    this.invoked.push(word);
+    this.last = undefined;
+    return;
+}
+
+if (this.options &amp;&amp; this.options[this.last] instanceof Array &amp;&amp;
+    this.options[this.last].indexOf(word) !== -1) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd_anonymizer.prototype.resolve" id="apidoc.element.gh.cmd_anonymizer.prototype.resolve">
+        function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>resolve
+        <span class="apidocSignatureSpan">(cmd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (cmd) {
+    // quasi-strict white list approach (best-effort)
+
+    this.invoked.push(cmd.shift());
+
+    cmd.forEach(this.classify, this);
+
+    return this.invoked;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    cmd.forEach(this.classify, this);
+
+    return this.invoked;
+};
+
+CmdAnonymizer.prototype.resolveToString = function (cmd) {
+    return this.<span class="apidocCodeKeywordSpan">resolve</span>(cmd).join(' ');
+};
+
+module.exports = CmdAnonymizer;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.cmd_anonymizer.prototype.resolveToString" id="apidoc.element.gh.cmd_anonymizer.prototype.resolveToString">
+        function <span class="apidocSignatureSpan">gh.cmd_anonymizer.prototype.</span>resolveToString
+        <span class="apidocSignatureSpan">(cmd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveToString = function (cmd) {
+    return this.resolve(cmd).join(' ');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    if (!commandDetails) {
+        return cmd.join(' ').replace(/\w+/g, redaction);
+    }
+
+    cmdAnonymizer = new CmdAnonymizer(commandDetails, redaction);
+
+    return cmdAnonymizer.<span class="apidocCodeKeywordSpan">resolveToString</span>(cmd);
+};
+
+tracker.trackCommand = function (cmd, commandDetails) {
+    var tracking = pkg.name + ' ' + this.resolveCommand(cmd, commandDetails);
+
+    this.track(tracking.replace(/ /g, '%20'));
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.configs" id="apidoc.module.gh.configs">module gh.configs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.addPluginConfig" id="apidoc.element.gh.configs.addPluginConfig">
+        function <span class="apidocSignatureSpan">gh.configs.</span>addPluginConfig
+        <span class="apidocSignatureSpan">(config, plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addPluginConfig = function (config, plugin) {
+    var pluginConfig,
+        userConfig;
+
+    try {
+        // Always use the plugin name without prefix. To be safe removing "gh-"
+        // prefix from passed plugin.
+        plugin = exports.getPluginBasename(plugin || process.env.NODEGH_PLUGIN);
+
+        pluginConfig = require(path.join(
+            exports.getNodeModulesGlobalPath(), 'gh-' + plugin, 'gh-plugin.json'));
+
+        // Merge default plugin configuration with the user's.
+        userConfig = config.plugins[plugin] || {};
+
+        Object.keys(userConfig).forEach(function (key) {
+            pluginConfig[key] = userConfig[key];
+        });
+
+        config.plugins[plugin] = pluginConfig;
+    }
+    catch (e) {
+        if (e.code !== 'MODULE_NOT_FOUND') {
+            throw e;
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    Object.keys(userConfig).forEach(function (key) {
+        config[key] = userConfig[key];
+    });
+
+    if (opt_plugin) {
+        exports.getPlugins().forEach(function (plugin) {
+            exports.<span class="apidocCodeKeywordSpan">addPluginConfig</span>(config, plugin);
+        });
+    }
+
+    return config;
+};
+
+exports.getGlobalConfigPath = function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.createGlobalConfig" id="apidoc.element.gh.configs.createGlobalConfig">
+        function <span class="apidocSignatureSpan">gh.configs.</span>createGlobalConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createGlobalConfig = function () {
+    exports.saveJsonConfig(exports.getUserHomePath(),
+        JSON.parse(fs.readFileSync(exports.getGlobalConfigPath()))
+    );
+    cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        tracker.trackCommand(options.argv.original, Command.DETAILS);
+    });
+});
+};
+
+exports.run = function () {
+if (!fs.existsSync(configs.getUserHomePath())) {
+    configs.<span class="apidocCodeKeywordSpan">createGlobalConfig</span>();
+}
+
+base.load();
+configs.getConfig();
+
+// If configs.PLUGINS_PATH_KEY is undefined, try to cache it before proceeding.
+if (configs.getConfig()[configs.PLUGINS_PATH_KEY] === undefined) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getConfig" id="apidoc.element.gh.configs.getConfig">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getConfig
+        <span class="apidocSignatureSpan">(opt_plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfig = function (opt_plugin) {
+    var config = cache[opt_plugin];
+
+    if (!config) {
+        config = getConfig(opt_plugin);
+        cache[opt_plugin] = config;
+    }
+
+    var protocol = config.api.protocol + '://',
+        is_enterprise = (config.api.host !== 'api.github.com');
+
+    if (config.github_host === undefined) {
+        config.github_host = protocol + (is_enterprise ? config.api.host : 'github.com') + '/';
+    }
+    if (config.github_gist_host === undefined) {
+        config.github_gist_host = protocol + (is_enterprise ? config.api.host + '/gist' : 'gist.github.com') + '/';
+    }
+
+    return config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.clone = function (o) {
+return JSON.parse(JSON.stringify(o));
+};
+
+// -- Utils --------------------------------------------------------------------
+
+exports.load = function () {
+var config = configs.<span class="apidocCodeKeywordSpan">getConfig</span>();
+
+exports.github = new Github({
+    debug: false,
+    host: config.api.host,
+    protocol: config.api.protocol,
+    version: config.api.version,
+    pathPrefix: config.api.pathPrefix
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getGlobalConfig" id="apidoc.element.gh.configs.getGlobalConfig">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getGlobalConfig
+        <span class="apidocSignatureSpan">(opt_plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getGlobalConfig = function (opt_plugin) {
+    var config,
+        configPath,
+        userConfig;
+
+    configPath = exports.getUserHomePath();
+
+    if (!fs.existsSync(configPath)) {
+        exports.createGlobalConfig();
+    }
+
+    config = JSON.parse(fs.readFileSync(exports.getGlobalConfigPath()));
+    userConfig = JSON.parse(fs.readFileSync(configPath));
+
+    Object.keys(userConfig).forEach(function (key) {
+        config[key] = userConfig[key];
+    });
+
+    if (opt_plugin) {
+        exports.getPlugins().forEach(function (plugin) {
+            exports.addPluginConfig(config, plugin);
+        });
+    }
+
+    return config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+exports.getUserHomePath = function () {
+    return userhome('.gh.json');
+};
+
+function getConfig(opt_plugin) {
+    var globalConfig = exports.<span class="apidocCodeKeywordSpan">getGlobalConfig</span>(opt_plugin),
+projectConfig,
+result = {};
+
+    try {
+projectConfig = JSON.parse(fs.readFileSync(exports.getProjectConfigPath()));
+
+Object.keys(globalConfig).forEach(function (key) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getGlobalConfigPath" id="apidoc.element.gh.configs.getGlobalConfigPath">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getGlobalConfigPath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getGlobalConfigPath = function () {
+    return path.join(__dirname, '../', 'default.gh.json');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+configPath = exports.getUserHomePath();
+
+if (!fs.existsSync(configPath)) {
+    exports.createGlobalConfig();
+}
+
+config = JSON.parse(fs.readFileSync(exports.<span class="apidocCodeKeywordSpan">getGlobalConfigPath</span>()));
+userConfig = JSON.parse(fs.readFileSync(configPath));
+
+Object.keys(userConfig).forEach(function (key) {
+    config[key] = userConfig[key];
+});
+
+if (opt_plugin) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getNodeModulesGlobalPath" id="apidoc.element.gh.configs.getNodeModulesGlobalPath">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getNodeModulesGlobalPath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNodeModulesGlobalPath = function () {
+    var result,
+        path = exports.getConfig()[PLUGINS_PATH_KEY];
+
+    if (path === undefined) {
+        result = exec.spawnSync('npm', ['root', '-g']);
+
+        if (result.stdout) {
+            path = result.stdout;
+            exports.writeGlobalConfig(PLUGINS_PATH_KEY, path);
+        }
+        else {
+            logger.warn('Can\'t resolve plugins directory path.');
+        }
+    }
+
+    return path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    callback(JSON.parse(data));
+}
+
+fs.readFile(path.join(__dirname, '..', 'package.json'), async);
+
+configs.getPlugins().forEach(function (plugin) {
+    fs.readFile(path.join(
+        configs.<span class="apidocCodeKeywordSpan">getNodeModulesGlobalPath</span>(), plugin, 'package.json'), async);
+});
+};
+
+exports.notifyVersion = function (pkg) {
+var notifier = updateNotifier({pkg: pkg}),
+    update,
+    track = 'notify/';
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getPlugin" id="apidoc.element.gh.configs.getPlugin">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getPlugin
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPlugin = function (plugin) {
+    plugin = exports.getPluginBasename(plugin);
+
+    return require(exports.getPluginPath('gh-' + plugin));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function loadCommand(name) {
+    var Command = findCommand(name),
+plugin;
+
+    // If command was not found, check if it is registered as a plugin.
+    if (!Command) {
+try {
+    plugin = configs.<span class="apidocCodeKeywordSpan">getPlugin</span>(name);
+}
+catch(e) {
+    return null;
+}
+
+Command = plugin.Impl;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getPluginBasename" id="apidoc.element.gh.configs.getPluginBasename">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getPluginBasename
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPluginBasename = function (plugin) {
+    return plugin &amp;&amp; plugin.replace('gh-', '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.addPluginConfig = function (config, plugin) {
+    var pluginConfig,
+userConfig;
+
+    try {
+// Always use the plugin name without prefix. To be safe removing "gh-"
+// prefix from passed plugin.
+plugin = exports.<span class="apidocCodeKeywordSpan">getPluginBasename</span>(plugin || process.env.NODEGH_PLUGIN);
+
+pluginConfig = require(path.join(
+    exports.getNodeModulesGlobalPath(), 'gh-' + plugin, 'gh-plugin.json'));
+
+// Merge default plugin configuration with the user's.
+userConfig = config.plugins[plugin] || {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getPluginPath" id="apidoc.element.gh.configs.getPluginPath">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getPluginPath
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPluginPath = function (plugin) {
+    return fs.realpathSync(which.sync(plugin));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    return plugins;
+};
+
+exports.getPlugin = function (plugin) {
+    plugin = exports.getPluginBasename(plugin);
+
+    return require(exports.<span class="apidocCodeKeywordSpan">getPluginPath</span>('gh-' + plugin));
+};
+
+exports.getPluginPath = function (plugin) {
+    return fs.realpathSync(which.sync(plugin));
+};
+
+exports.getPluginBasename = function (plugin) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getPlugins" id="apidoc.element.gh.configs.getPlugins">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getPlugins
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPlugins = function () {
+    if (!plugins) {
+        plugins = getPlugins();
+    }
+
+    return plugins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+
+    callback(JSON.parse(data));
+}
+
+fs.readFile(path.join(__dirname, '..', 'package.json'), async);
+
+configs.<span class="apidocCodeKeywordSpan">getPlugins</span>().forEach(function (plugin) {
+    fs.readFile(path.join(
+        configs.getNodeModulesGlobalPath(), plugin, 'package.json'), async);
+});
+};
+
+exports.notifyVersion = function (pkg) {
+var notifier = updateNotifier({pkg: pkg}),
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getProjectConfigPath" id="apidoc.element.gh.configs.getProjectConfigPath">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getProjectConfigPath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProjectConfigPath = function () {
+    return path.join(process.cwd(), '.gh.json');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function getConfig(opt_plugin) {
+    var globalConfig = exports.getGlobalConfig(opt_plugin),
+projectConfig,
+result = {};
+
+    try {
+projectConfig = JSON.parse(fs.readFileSync(exports.<span class="apidocCodeKeywordSpan">getProjectConfigPath</span>()));
+
+Object.keys(globalConfig).forEach(function (key) {
+    result[key] = globalConfig[key];
+});
+
+Object.keys(projectConfig).forEach(function (key) {
+    result[key] = projectConfig[key];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.getUserHomePath" id="apidoc.element.gh.configs.getUserHomePath">
+        function <span class="apidocSignatureSpan">gh.configs.</span>getUserHomePath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUserHomePath = function () {
+    return userhome('.gh.json');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        tracker.trackCommand(options.argv.original, Command.DETAILS);
+    });
+});
+};
+
+exports.run = function () {
+if (!fs.existsSync(configs.<span class="apidocCodeKeywordSpan">getUserHomePath</span>())) {
+    configs.createGlobalConfig();
+}
+
+base.load();
+configs.getConfig();
+
+// If configs.PLUGINS_PATH_KEY is undefined, try to cache it before proceeding.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.isPluginIgnored" id="apidoc.element.gh.configs.isPluginIgnored">
+        function <span class="apidocSignatureSpan">gh.configs.</span>isPluginIgnored
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isPluginIgnored = function (plugin) {
+    if (exports.getConfig().ignored_plugins.indexOf(exports.getPluginBasename(plugin)) &gt; -1) {
+        return true;
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // Second, search all installed plugins and load the hooks for each into
+    // core hooks array.
+    plugins.forEach(function (plugin) {
+var pluginConfig;
+
+plugin = configs.getPluginBasename(plugin);
+
+if (config.plugins &amp;&amp; !configs.<span class="apidocCodeKeywordSpan">isPluginIgnored</span>(plugin)) {
+    pluginConfig = config.plugins[plugin];
+
+    if (pluginConfig) {
+        pluginHooks = pluginHooks.concat(
+            exports.getHooksArrayFromPath_(path, pluginConfig));
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.removeGlobalConfig" id="apidoc.element.gh.configs.removeGlobalConfig">
+        function <span class="apidocSignatureSpan">gh.configs.</span>removeGlobalConfig
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeGlobalConfig = function (key) {
+    var config = exports.getGlobalConfig();
+
+    delete config[key];
+
+    exports.saveJsonConfig(exports.getUserHomePath(), config);
+    cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.saveJsonConfig" id="apidoc.element.gh.configs.saveJsonConfig">
+        function <span class="apidocSignatureSpan">gh.configs.</span>saveJsonConfig
+        <span class="apidocSignatureSpan">(path, object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveJsonConfig = function (path, object) {
+    var options = {
+        mode: parseInt('0600', 8)
+    };
+
+    fs.writeFileSync(path, JSON.stringify(object, null, 4), options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+exports.removeGlobalConfig = function (key) {
+var config = exports.getGlobalConfig();
+
+delete config[key];
+
+exports.<span class="apidocCodeKeywordSpan">saveJsonConfig</span>(exports.getUserHomePath(), config);
+cache = {};
+};
+
+exports.createGlobalConfig = function () {
+exports.saveJsonConfig(exports.getUserHomePath(),
+    JSON.parse(fs.readFileSync(exports.getGlobalConfigPath()))
+);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.writeGlobalConfig" id="apidoc.element.gh.configs.writeGlobalConfig">
+        function <span class="apidocSignatureSpan">gh.configs.</span>writeGlobalConfig
+        <span class="apidocSignatureSpan">(jsonPath, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeGlobalConfig = function (jsonPath, value) {
+    var config = exports.getGlobalConfig(),
+        i,
+        output,
+        path,
+        pathLen;
+
+    path = jsonPath.split('.');
+    output = config;
+
+    for (i = 0, pathLen = path.length; i &lt; pathLen; i++) {
+        output[path[i]] = config[path[i]] || (i + 1 === pathLen ? value : {});
+        output = output[path[i]];
+    }
+
+    exports.saveJsonConfig(exports.getUserHomePath(), config);
+    cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    path = exports.getConfig()[PLUGINS_PATH_KEY];
+
+if (path === undefined) {
+    result = exec.spawnSync('npm', ['root', '-g']);
+
+    if (result.stdout) {
+        path = result.stdout;
+        exports.<span class="apidocCodeKeywordSpan">writeGlobalConfig</span>(PLUGINS_PATH_KEY, path);
+    }
+    else {
+        logger.warn('Can\'t resolve plugins directory path.');
+    }
+}
+
+return path;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.configs.writeGlobalConfigCredentials" id="apidoc.element.gh.configs.writeGlobalConfigCredentials">
+        function <span class="apidocSignatureSpan">gh.configs.</span>writeGlobalConfigCredentials
+        <span class="apidocSignatureSpan">(user, token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeGlobalConfigCredentials = function (user, token) {
+    var configPath = exports.getUserHomePath();
+
+    exports.writeGlobalConfig('github_user', user);
+    exports.writeGlobalConfig('github_token', token);
+    logger.log('Writing GH config data: ' + configPath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.exec" id="apidoc.module.gh.exec">module gh.exec</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.exec.execSync" id="apidoc.element.gh.exec.execSync">
+        function <span class="apidocSignatureSpan">gh.exec.</span>execSync
+        <span class="apidocSignatureSpan">(cmd, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execSync = function (cmd, options) {
+    if (!options) {
+        options = {};
+    }
+
+    logger.debug('execSync: ' + cmd);
+
+    options.stdio = ['pipe', process.stdout, process.stderr];
+
+    return child_process.execSync(cmd, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    options = {};
+}
+
+logger.debug('execSync: ' + cmd);
+
+options.stdio = ['pipe', process.stdout, process.stderr];
+
+return child_process.<span class="apidocCodeKeywordSpan">execSync</span>(cmd, options);
+};
+
+exports.execSyncInteractiveStream = function (cmd, options) {
+if (!options) {
+    options = {};
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.exec.execSyncInteractiveStream" id="apidoc.element.gh.exec.execSyncInteractiveStream">
+        function <span class="apidocSignatureSpan">gh.exec.</span>execSyncInteractiveStream
+        <span class="apidocSignatureSpan">(cmd, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execSyncInteractiveStream = function (cmd, options) {
+    if (!options) {
+        options = {};
+    }
+
+    logger.debug('execSyncInteractiveStream: ' + cmd);
+
+    options.stdio = 'inherit';
+
+    return child_process.execSync(cmd, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    callback &amp;&amp; callback();
+    return;
+}
+
+logger.log(logger.colors.cyan('[hook]'), truncate(raw.trim(), 120));
+
+try {
+    exec.<span class="apidocCodeKeywordSpan">execSyncInteractiveStream</span>(raw, {cwd: process.cwd()});
+} catch(e) {
+    logger.debug('[' + when + ' hook failure]');
+} finally {
+    logger.debug(logger.colors.cyan('[end of ' + when + ' hook]'));
+}
+
+callback &amp;&amp; callback();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.exec.spawnSync" id="apidoc.element.gh.exec.spawnSync">
+        function <span class="apidocSignatureSpan">gh.exec.</span>spawnSync
+        <span class="apidocSignatureSpan">(cmd, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spawnSync = function (cmd, args, options) {
+    var exec;
+
+    logger.debug('spawnSync: ' + cmd + ' ' + args.join(' '));
+
+    exec = child_process.spawnSync(cmd, args, options);
+
+    if (exec.error &amp;&amp; exec.error.code === 'ENOENT' &amp;&amp; process.platform === 'win32') {
+        logger.debug('Invoking patched sapwnSync due to Windows\' libuv bug');
+        exec = child_process.spawnSync(cmd + '.cmd', args, options);
+    }
+
+    return {
+        stdout: exec.stdout.toString().trim(),
+        stderr: exec.stderr.toString().trim(),
+        status: exec.status
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// -- Config -------------------------------------------------------------------
+
+exports.getNodeModulesGlobalPath = function () {
+    var result,
+path = exports.getConfig()[PLUGINS_PATH_KEY];
+
+    if (path === undefined) {
+result = exec.<span class="apidocCodeKeywordSpan">spawnSync</span>('npm', ['root', '-g']);
+
+if (result.stdout) {
+    path = result.stdout;
+    exports.writeGlobalConfig(PLUGINS_PATH_KEY, path);
+}
+else {
+    logger.warn('Can\'t resolve plugins directory path.');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.exec.spawnSyncStream" id="apidoc.element.gh.exec.spawnSyncStream">
+        function <span class="apidocSignatureSpan">gh.exec.</span>spawnSyncStream
+        <span class="apidocSignatureSpan">(cmd, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spawnSyncStream = function (cmd, args, options) {
+    var proc,
+        err;
+
+    if (!options) {
+        options = {};
+    }
+
+    options.stdio = ['pipe', process.stdout, process.stderr];
+
+    logger.debug('spawnSyncStream: ' + cmd + ' ' + args.join(' '));
+
+    proc = child_process.spawnSync(cmd, args, options);
+
+    if (proc.status !== 0) {
+        err = new Error();
+        err.code = proc.status;
+        err.message = 'Child process terminated with error code ' + err.code;
+
+        throw err;
+    }
+
+    return proc;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.checkout = function (branch, newBranch) {
+var args = ['checkout', branch];
+
+if (newBranch) {
+    args.push('-B', newBranch);
+}
+
+return exec.<span class="apidocCodeKeywordSpan">spawnSyncStream</span>(git_command, args);
+};
+
+exports.clone = function (url, folder) {
+var args = ['clone', url];
+
+if (folder) {
+    args.push(folder);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.git" id="apidoc.module.gh.git">module gh.git</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git._merge" id="apidoc.element.gh.git._merge">
+        function <span class="apidocSignatureSpan">gh.git.</span>_merge
+        <span class="apidocSignatureSpan">(branch, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_merge = function (branch, type) {
+    var res;
+
+    try {
+        res = exec.spawnSyncStream(git_command, [type, branch]);
+    } catch(err) {
+        if (err.code &amp;&amp; err.code !== 0) {
+            exec.spawnSyncStream(git_command, [type, '--abort']);
+            throw err;
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            exec.spawnSyncStream(git_command, [type, '--abort']);
+            throw err;
+        }
+    }
+};
+
+exports.merge = function (branch) {
+    return this.<span class="apidocCodeKeywordSpan">_merge</span>(branch, 'merge');
+};
+
+exports.rebase = function (branch) {
+    return this._merge(branch, 'rebase');
+};
+
+exports.push = function (remote, branch) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.checkout" id="apidoc.element.gh.git.checkout">
+        function <span class="apidocSignatureSpan">gh.git.</span>checkout
+        <span class="apidocSignatureSpan">(branch, newBranch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkout = function (branch, newBranch) {
+    var args = ['checkout', branch];
+
+    if (newBranch) {
+        args.push('-B', newBranch);
+    }
+
+    return exec.spawnSyncStream(git_command, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.clone" id="apidoc.element.gh.git.clone">
+        function <span class="apidocSignatureSpan">gh.git.</span>clone
+        <span class="apidocSignatureSpan">(url, folder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (url, folder) {
+    var args = ['clone', url];
+
+    if (folder) {
+        args.push(folder);
+    }
+
+    return exec.spawnSyncStream(git_command, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        // Try to retrieve iterative values from iterative option key,
+        // e.g. option['number'] === [1,2,3]. If iterative option key is not
+        // present, assume [undefined] in order to initialize the loop.
+        iterativeValues = options[iterative] || [undefined];
+
+        iterativeValues.forEach(function (value) {
+options = base.<span class="apidocCodeKeywordSpan">clone</span>(options);
+
+// Value can be undefined when the command doesn't have a iterative
+// option.
+options[iterative] = value;
+
+invokePayload(options, Command, cooked, remain);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.countUserAdjacentCommits" id="apidoc.element.gh.git.countUserAdjacentCommits">
+        function <span class="apidocSignatureSpan">gh.git.</span>countUserAdjacentCommits
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">countUserAdjacentCommits = function () {
+    var git,
+        params,
+        commits = 0,
+        user = exports.getConfig('user.name'),
+        author;
+
+    do {
+        params = ['log', '-1', '--skip=' + commits, '--pretty=%an'];
+        git = exec.spawnSync(git_command, params);
+
+        if (git.status !== 0) {
+            logger.error(git.stderr);
+        }
+
+        author = git.stdout;
+
+        commits += 1;
+    } while (author === user);
+
+    commits -= 1;
+
+    return commits;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.deleteBranch" id="apidoc.element.gh.git.deleteBranch">
+        function <span class="apidocSignatureSpan">gh.git.</span>deleteBranch
+        <span class="apidocSignatureSpan">(branch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteBranch = function (branch) {
+    var git = exec.spawnSync(git_command, ['branch', '-d', branch]);
+
+    if (git.status !== 0) {
+        logger.debug(git.stderr);
+    }
+
+    return git.stdout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.fetch" id="apidoc.element.gh.git.fetch">
+        function <span class="apidocSignatureSpan">gh.git.</span>fetch
+        <span class="apidocSignatureSpan">(repoUrl, headBranch, pullBranch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetch = function (repoUrl, headBranch, pullBranch) {
+    var args = ['fetch', repoUrl, headBranch + ':' + pullBranch, '--no-tags'];
+
+    return exec.spawnSyncStream(git_command, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.findRoot" id="apidoc.element.gh.git.findRoot">
+        function <span class="apidocSignatureSpan">gh.git.</span>findRoot
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findRoot = function () {
+    return exec.spawnSync(git_command, ['rev-parse', '--show-toplevel']).stdout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getCommitMessage" id="apidoc.element.gh.git.getCommitMessage">
+        function <span class="apidocSignatureSpan">gh.git.</span>getCommitMessage
+        <span class="apidocSignatureSpan">(branch, number)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCommitMessage = function (branch, number) {
+    var git,
+        params = ['log'];
+
+    if (!number) {
+        number = 1;
+    }
+
+    params.push('-' + number, '--first-parent', '--no-merges', '--pretty=%s');
+
+    if (branch) {
+        params.push(branch);
+    }
+
+    params.push('--');
+
+    git = exec.spawnSync(git_command, params);
+
+    if (git.status !== 0) {
+        logger.debug('Can\'t get commit message.');
+        return;
+    }
+
+    return git.stdout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return;
+}
+
+return git.stdout;
+};
+
+exports.getLastCommitMessage = function (branch) {
+return exports.<span class="apidocCodeKeywordSpan">getCommitMessage</span>(branch, 1);
+};
+
+exports.getLastCommitSHA = function () {
+var git = exec.spawnSync(git_command, ['rev-parse', '--short', 'HEAD']);
+
+if (git.status !== 0) {
+    throw new Error('Can\'t retrieve last commit.');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getConfig" id="apidoc.element.gh.git.getConfig">
+        function <span class="apidocSignatureSpan">gh.git.</span>getConfig
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfig = function (key) {
+    var git = exec.spawnSync(git_command, ['config', '--get', key]);
+
+    if (git.status !== 0) {
+        throw new Error('No git config found for ' + key + '\n');
+    }
+
+    return git.stdout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.clone = function (o) {
+return JSON.parse(JSON.stringify(o));
+};
+
+// -- Utils --------------------------------------------------------------------
+
+exports.load = function () {
+var config = configs.<span class="apidocCodeKeywordSpan">getConfig</span>();
+
+exports.github = new Github({
+    debug: false,
+    host: config.api.host,
+    protocol: config.api.protocol,
+    version: config.api.version,
+    pathPrefix: config.api.pathPrefix
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getCurrentBranch" id="apidoc.element.gh.git.getCurrentBranch">
+        function <span class="apidocSignatureSpan">gh.git.</span>getCurrentBranch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCurrentBranch = function () {
+    var git = exec.spawnSync(git_command, ['symbolic-ref', '--short', 'HEAD']);
+
+    if (git.status !== 0) {
+        logger.debug('Can\'t get current branch.');
+        return;
+    }
+
+    return git.stdout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    else {
+        options.user = options.remoteUser || options.loggedUser;
+    }
+}
+
+options.repo = options.repo || git.getRepoFromRemoteURL(remoteUrl);
+options.currentBranch = options.currentBranch || git.<span class="apidocCodeKeywordSpan">getCurrentBranch</span>();
+
+base.expandAliases(options);
+options.github_host = config.github_host;
+options.github_gist_host = config.github_gist_host;
+
+// Try to retrieve iterative values from iterative option key,
+// e.g. option['number'] === [1,2,3]. If iterative option key is not
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getLastCommitMessage" id="apidoc.element.gh.git.getLastCommitMessage">
+        function <span class="apidocSignatureSpan">gh.git.</span>getLastCommitMessage
+        <span class="apidocSignatureSpan">(branch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastCommitMessage = function (branch) {
+    return exports.getCommitMessage(branch, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getLastCommitSHA" id="apidoc.element.gh.git.getLastCommitSHA">
+        function <span class="apidocSignatureSpan">gh.git.</span>getLastCommitSHA
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastCommitSHA = function () {
+    var git = exec.spawnSync(git_command, ['rev-parse', '--short', 'HEAD']);
+
+    if (git.status !== 0) {
+        throw new Error('Can\'t retrieve last commit.');
+    }
+
+    return git.stdout;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getRemoteUrl" id="apidoc.element.gh.git.getRemoteUrl">
+        function <span class="apidocSignatureSpan">gh.git.</span>getRemoteUrl
+        <span class="apidocSignatureSpan">(remote)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRemoteUrl = function (remote) {
+    try {
+        return exports.getConfig('remote.' + remote + '.url');
+    }
+    catch(e) {
+        logger.debug('Can\'t get remote URL.');
+        return;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+else {
+    User.login(callback);
+}
+    });
+
+    async.series(operations, function () {
+var iterativeValues,
+    remoteUrl = git.<span class="apidocCodeKeywordSpan">getRemoteUrl</span>(options.remote);
+
+options.isTTY = {};
+options.isTTY.in = Boolean(process.stdin.isTTY);
+options.isTTY.out = Boolean(process.stdout.isTTY);
+options.loggedUser = base.getUser();
+options.remoteUser = git.getUserFromRemoteUrl(remoteUrl);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getRepo" id="apidoc.element.gh.git.getRepo">
+        function <span class="apidocSignatureSpan">gh.git.</span>getRepo
+        <span class="apidocSignatureSpan">(remote)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRepo = function (remote) {
+    return exports.getRepoFromRemoteURL(exports.getRemoteUrl(remote));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getRepoFromRemoteURL" id="apidoc.element.gh.git.getRepoFromRemoteURL">
+        function <span class="apidocSignatureSpan">gh.git.</span>getRepoFromRemoteURL
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRepoFromRemoteURL = function (url) {
+    var parsed = exports.parseRemoteUrl(url);
+
+    return parsed &amp;&amp; parsed[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        options.user = options.loggedUser;
+    }
+    else {
+        options.user = options.remoteUser || options.loggedUser;
+    }
+}
+
+options.repo = options.repo || git.<span class="apidocCodeKeywordSpan">getRepoFromRemoteURL</span>(remoteUrl);
+options.currentBranch = options.currentBranch || git.getCurrentBranch();
+
+base.expandAliases(options);
+options.github_host = config.github_host;
+options.github_gist_host = config.github_gist_host;
+
+// Try to retrieve iterative values from iterative option key,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getUser" id="apidoc.element.gh.git.getUser">
+        function <span class="apidocSignatureSpan">gh.git.</span>getUser
+        <span class="apidocSignatureSpan">(remote)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUser = function (remote) {
+    return exports.getUserFromRemoteUrl(exports.getRemoteUrl(remote));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    async.series(operations, function () {
+var iterativeValues,
+    remoteUrl = git.getRemoteUrl(options.remote);
+
+options.isTTY = {};
+options.isTTY.in = Boolean(process.stdin.isTTY);
+options.isTTY.out = Boolean(process.stdout.isTTY);
+options.loggedUser = base.<span class="apidocCodeKeywordSpan">getUser</span>();
+options.remoteUser = git.getUserFromRemoteUrl(remoteUrl);
+
+if (!options.user) {
+    if (options.repo || options.all) {
+        options.user = options.loggedUser;
+    }
+    else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.getUserFromRemoteUrl" id="apidoc.element.gh.git.getUserFromRemoteUrl">
+        function <span class="apidocSignatureSpan">gh.git.</span>getUserFromRemoteUrl
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUserFromRemoteUrl = function (url) {
+    var parsed = exports.parseRemoteUrl(url);
+
+    return parsed &amp;&amp; parsed[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var iterativeValues,
+    remoteUrl = git.getRemoteUrl(options.remote);
+
+options.isTTY = {};
+options.isTTY.in = Boolean(process.stdin.isTTY);
+options.isTTY.out = Boolean(process.stdout.isTTY);
+options.loggedUser = base.getUser();
+options.remoteUser = git.<span class="apidocCodeKeywordSpan">getUserFromRemoteUrl</span>(remoteUrl);
+
+if (!options.user) {
+    if (options.repo || options.all) {
+        options.user = options.loggedUser;
+    }
+    else {
+        options.user = options.remoteUser || options.loggedUser;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.merge" id="apidoc.element.gh.git.merge">
+        function <span class="apidocSignatureSpan">gh.git.</span>merge
+        <span class="apidocSignatureSpan">(branch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (branch) {
+    return this._merge(branch, 'merge');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var lodash = require('lodash');
+var logger = require('./logger');
+
+var RestApiClient = (function () {
+function RestApiClient(options) {
+    _classCallCheck(this, RestApiClient);
+
+    options = lodash.<span class="apidocCodeKeywordSpan">merge</span>(this.DEFAULT_CONFIG, options);
+    this.options = options;
+}
+
+RestApiClient.prototype.encode = function encode() {
+    return encodeURIComponent.apply(this, arguments);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.parseRemoteUrl" id="apidoc.element.gh.git.parseRemoteUrl">
+        function <span class="apidocSignatureSpan">gh.git.</span>parseRemoteUrl
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseRemoteUrl = function (url) {
+    var parsed = /[\/:]([\w-]+)\/(.*?)(?:\.git)?$/.exec(url);
+
+    if (parsed) {
+        parsed.shift();
+    }
+
+    return parsed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+catch(e) {
+    logger.debug('Can\'t get remote URL.');
+    return;
+}
+};
+
+exports.getRepoFromRemoteURL = function (url) {
+var parsed = exports.<span class="apidocCodeKeywordSpan">parseRemoteUrl</span>(url);
+
+return parsed &amp;&amp; parsed[1];
+};
+
+exports.getUserFromRemoteUrl = function (url) {
+var parsed = exports.parseRemoteUrl(url);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.push" id="apidoc.element.gh.git.push">
+        function <span class="apidocSignatureSpan">gh.git.</span>push
+        <span class="apidocSignatureSpan">(remote, branch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (remote, branch) {
+    var args = ['push', remote];
+
+    if (branch) {
+        args.push(branch);
+    }
+
+    return exec.spawnSyncStream(git_command, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+CmdAnonymizer.prototype.classify = function (word) {
+var arg = this.extractArgument(word),
+    whitelist = ['verbose', 'no-hooks'];
+
+if (whitelist.indexOf(arg) === 0) {
+    this.invoked.<span class="apidocCodeKeywordSpan">push</span>(word);
+    this.last = arg;
+    return;
+}
+
+if (this.shorthands &amp;&amp; this.shorthands[arg]) {
+    this.invoked.push(word);
+    this.last = this.shorthands[arg];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.git.rebase" id="apidoc.element.gh.git.rebase">
+        function <span class="apidocSignatureSpan">gh.git.</span>rebase
+        <span class="apidocSignatureSpan">(branch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rebase = function (branch) {
+    return this._merge(branch, 'rebase');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.hooks" id="apidoc.module.gh.hooks">module gh.hooks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.hooks.createContext" id="apidoc.element.gh.hooks.createContext">
+        function <span class="apidocSignatureSpan">gh.hooks.</span>createContext
+        <span class="apidocSignatureSpan">(scope)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createContext = function (scope) {
+    return {
+        options: scope.options,
+        signature: config.signature
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    context;
+
+if (options.hooks === false || process.env.NODEGH_HOOK_IS_LOCKED) {
+    opt_callback &amp;&amp; opt_callback();
+    return;
+}
+
+context = exports.<span class="apidocCodeKeywordSpan">createContext</span>(scope);
+
+beforeOperations = [
+
+    function (callback) {
+        exports.setupPlugins_(context, 'setupBeforeHooks', callback);
+    }
+];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.hooks.getHooksArrayFromPath_" id="apidoc.element.gh.hooks.getHooksArrayFromPath_">
+        function <span class="apidocSignatureSpan">gh.hooks.</span>getHooksArrayFromPath_
+        <span class="apidocSignatureSpan">(path, opt_config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHooksArrayFromPath_ = function (path, opt_config) {
+    var keys = path.split('.'),
+        key = keys.shift(),
+        hooks;
+
+    opt_config = opt_config || config;
+
+    hooks = opt_config.hooks || {};
+
+    while (hooks[key]) {
+        hooks = hooks[key];
+        key = keys.shift();
+    }
+
+    return Array.isArray(hooks) ? hooks : [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+exports.getHooksFromPath = function (path) {
+    var hooks,
+plugins = configs.getPlugins(),
+pluginHooks = [];
+
+    // First, load all core hooks for the specified path.
+    hooks = exports.<span class="apidocCodeKeywordSpan">getHooksArrayFromPath_</span>(path);
+
+    // Second, search all installed plugins and load the hooks for each into
+    // core hooks array.
+    plugins.forEach(function (plugin) {
+var pluginConfig;
+
+plugin = configs.getPluginBasename(plugin);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.hooks.getHooksFromPath" id="apidoc.element.gh.hooks.getHooksFromPath">
+        function <span class="apidocSignatureSpan">gh.hooks.</span>getHooksFromPath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHooksFromPath = function (path) {
+    var hooks,
+        plugins = configs.getPlugins(),
+        pluginHooks = [];
+
+    // First, load all core hooks for the specified path.
+    hooks = exports.getHooksArrayFromPath_(path);
+
+    // Second, search all installed plugins and load the hooks for each into
+    // core hooks array.
+    plugins.forEach(function (plugin) {
+        var pluginConfig;
+
+        plugin = configs.getPluginBasename(plugin);
+
+        if (config.plugins &amp;&amp; !configs.isPluginIgnored(plugin)) {
+            pluginConfig = config.plugins[plugin];
+
+            if (pluginConfig) {
+                pluginHooks = pluginHooks.concat(
+                    exports.getHooksArrayFromPath_(path, pluginConfig));
+            }
+        }
+    });
+
+    return hooks.concat(pluginHooks);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+});
+
+return hooks.concat(pluginHooks);
+};
+
+exports.invoke = function (path, scope, opt_callback) {
+var after = exports.<span class="apidocCodeKeywordSpan">getHooksFromPath</span>(path + '.after'),
+    before = exports.getHooksFromPath(path + '.before'),
+    beforeOperations,
+    afterOperations,
+    options = scope.options,
+    context;
+
+if (options.hooks === false || process.env.NODEGH_HOOK_IS_LOCKED) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.hooks.invoke" id="apidoc.element.gh.hooks.invoke">
+        function <span class="apidocSignatureSpan">gh.hooks.</span>invoke
+        <span class="apidocSignatureSpan">(path, scope, opt_callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invoke = function (path, scope, opt_callback) {
+    var after = exports.getHooksFromPath(path + '.after'),
+        before = exports.getHooksFromPath(path + '.before'),
+        beforeOperations,
+        afterOperations,
+        options = scope.options,
+        context;
+
+    if (options.hooks === false || process.env.NODEGH_HOOK_IS_LOCKED) {
+        opt_callback &amp;&amp; opt_callback();
+        return;
+    }
+
+    context = exports.createContext(scope);
+
+    beforeOperations = [
+
+        function (callback) {
+            exports.setupPlugins_(context, 'setupBeforeHooks', callback);
+        }
+    ];
+
+    before.forEach(function (cmd) {
+        beforeOperations.push(exports.wrapCommand_(cmd, context, 'before'));
+    });
+
+    afterOperations = [
+
+        function (callback) {
+            exports.setupPlugins_(context, 'setupAfterHooks', callback);
+        }
+    ];
+
+    after.forEach(function (cmd) {
+        afterOperations.push(exports.wrapCommand_(cmd, context, 'after'));
+    });
+
+    afterOperations.push(function (callback) {
+        process.env.NODEGH_HOOK_IS_LOCKED = false;
+        callback();
+    });
+
+    process.env.NODEGH_HOOK_IS_LOCKED = true;
+
+    async.series(beforeOperations, function () {
+        opt_callback &amp;&amp; opt_callback(function () {
+            async.series(afterOperations);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.hooks.setupPlugins_" id="apidoc.element.gh.hooks.setupPlugins_">
+        function <span class="apidocSignatureSpan">gh.hooks.</span>setupPlugins_
+        <span class="apidocSignatureSpan">(context, setupFn, opt_callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupPlugins_ = function (context, setupFn, opt_callback) {
+    var plugins = configs.getPlugins(),
+        operations = [];
+
+    plugins.forEach(function (plugin) {
+        try {
+            plugin = configs.getPlugin(plugin);
+        }
+        catch(e) {
+            logger.warn('Can\'t get ' + plugin + ' plugin.');
+        }
+
+        if (plugin &amp;&amp; plugin[setupFn]) {
+            operations.push(function (callback) {
+                plugin[setupFn](context, callback);
+            });
+        }
+    });
+
+    async.series(operations, function () {
+        opt_callback &amp;&amp; opt_callback();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+context = exports.createContext(scope);
+
+beforeOperations = [
+
+    function (callback) {
+        exports.<span class="apidocCodeKeywordSpan">setupPlugins_</span>(context, 'setupBeforeHooks', callback);
+    }
+];
+
+before.forEach(function (cmd) {
+    beforeOperations.push(exports.wrapCommand_(cmd, context, 'before'));
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.hooks.wrapCommand_" id="apidoc.element.gh.hooks.wrapCommand_">
+        function <span class="apidocSignatureSpan">gh.hooks.</span>wrapCommand_
+        <span class="apidocSignatureSpan">(cmd, context, when)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrapCommand_ = function (cmd, context, when) {
+    return function (callback) {
+        var raw = logger.compileTemplate(cmd, context);
+
+        if (!raw) {
+            callback &amp;&amp; callback();
+            return;
+        }
+
+        logger.log(logger.colors.cyan('[hook]'), truncate(raw.trim(), 120));
+
+        try {
+            exec.execSyncInteractiveStream(raw, {cwd: process.cwd()});
+        } catch(e) {
+            logger.debug('[' + when + ' hook failure]');
+        } finally {
+            logger.debug(logger.colors.cyan('[end of ' + when + ' hook]'));
+        }
+
+        callback &amp;&amp; callback();
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function (callback) {
+    exports.setupPlugins_(context, 'setupBeforeHooks', callback);
+}
+    ];
+
+    before.forEach(function (cmd) {
+beforeOperations.push(exports.<span class="apidocCodeKeywordSpan">wrapCommand_</span>(cmd, context, 'before'));
+    });
+
+    afterOperations = [
+
+function (callback) {
+    exports.setupPlugins_(context, 'setupAfterHooks', callback);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.logger" id="apidoc.module.gh.logger">module gh.logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.applyReplacements" id="apidoc.element.gh.logger.applyReplacements">
+        function <span class="apidocSignatureSpan">gh.logger.</span>applyReplacements
+        <span class="apidocSignatureSpan">(output, replaceMap)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyReplacements = function (output, replaceMap) {
+    var regexPattern;
+
+    for (regexPattern in replaceMap) {
+        if (replaceMap.hasOwnProperty(regexPattern)) {
+            output = output.replace(
+                new RegExp(regexPattern, 'g'), replaceMap[regexPattern]);
+        }
+    }
+
+    return output;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // Normalize git error
+    return err.message.replace('Command failed: fatal: ', '').trim();
+};
+
+logger.compileTemplate = function (source, map) {
+    var template = handlebars.compile(source);
+
+    return logger.<span class="apidocCodeKeywordSpan">applyReplacements</span>(template(map));
+};
+
+logger.logTemplate = function (source, map) {
+    console.log(logger.compileTemplate(source, map || {}));
+};
+
+logger.logTemplateFile = function (file, map) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.compileTemplate" id="apidoc.element.gh.logger.compileTemplate">
+        function <span class="apidocSignatureSpan">gh.logger.</span>compileTemplate
+        <span class="apidocSignatureSpan">(source, map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileTemplate = function (source, map) {
+    var template = handlebars.compile(source);
+
+    return logger.applyReplacements(template(map));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    async.series(operations, function () {
+opt_callback &amp;&amp; opt_callback();
+    });
+};
+
+exports.wrapCommand_ = function (cmd, context, when) {
+    return function (callback) {
+var raw = logger.<span class="apidocCodeKeywordSpan">compileTemplate</span>(cmd, context);
+
+if (!raw) {
+    callback &amp;&amp; callback();
+    return;
+}
+
+logger.log(logger.colors.cyan('[hook]'), truncate(raw.trim(), 120));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.debug" id="apidoc.element.gh.logger.debug">
+        function <span class="apidocSignatureSpan">gh.logger.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function () {
+    if (!process.env.GH_VERBOSE) {
+        return;
+    }
+
+    if (typeof arguments[0] === 'string') {
+        arguments[0] = 'DEBUG: ' + arguments[0];
+        console.log.apply(this, arguments);
+        return;
+    }
+
+    console.log('DEBUG:');
+    console.log.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    Object.keys(projectConfig).forEach(function (key) {
+        result[key] = projectConfig[key];
+    });
+
+    return result;
+}
+catch (e) {
+    logger.<span class="apidocCodeKeywordSpan">debug</span>(e.message);
+
+    if (e.code !== 'MODULE_NOT_FOUND' &amp;&amp; e.code !== 'ENOENT') {
+        throw e;
+    }
+
+    return globalConfig;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.error" id="apidoc.element.gh.logger.error">
+        function <span class="apidocSignatureSpan">gh.logger.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function () {
+    if (typeof arguments[0] === 'string') {
+        arguments[0] = 'fatal: ' + arguments[0];
+    }
+
+    console.error.apply(this, arguments);
+    process.exit(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    module = 'help';
+}
+
+Command = loadCommand(module);
+
+if (!Command) {
+    tracker.trackCommand(remain);
+    logger.<span class="apidocCodeKeywordSpan">error</span>('Command not found');
+    return;
+}
+
+options = nopt(
+    Command.DETAILS.options,
+    Command.DETAILS.shorthands, process.argv, 2);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.getDuration" id="apidoc.element.gh.logger.getDuration">
+        function <span class="apidocSignatureSpan">gh.logger.</span>getDuration
+        <span class="apidocSignatureSpan">(start, opt_end)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDuration = function (start, opt_end) {
+    if (opt_end === undefined) {
+        opt_end = Date.now();
+    }
+
+    return moment.duration(moment(start).diff(opt_end)).humanize(true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+logger.registerHelper = function (name, callback) {
+handlebars.registerHelper(name, callback);
+};
+
+logger.registerHelpers_ = function () {
+handlebars.registerHelper('date', function (date) {
+    return logger.<span class="apidocCodeKeywordSpan">getDuration</span>(date);
+});
+
+handlebars.registerHelper('compareLink', function () {
+    return this.options.github_host + this.options.user + '/' + this.options.repo +
+        '/compare/' + this.options.pullHeadSHA + '...' + this.options.currentSHA;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.getErrorMessage" id="apidoc.element.gh.logger.getErrorMessage">
+        function <span class="apidocSignatureSpan">gh.logger.</span>getErrorMessage
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getErrorMessage = function (err) {
+    var msg;
+
+    // General normalizer
+    if (!err) {
+        return 'No error message.';
+    }
+
+    if (err.errors) {
+        return err.errors;
+    }
+
+    // Normalize github api error
+    if (!err.message) {
+        return err;
+    }
+
+    try {
+        msg = JSON.parse(err.message);
+    } catch(e) {
+        return err.message;
+    }
+
+    if (typeof msg === 'string') {
+        return msg;
+    }
+
+    if (msg.errors &amp;&amp; msg.errors[0] &amp;&amp; msg.errors[0].message) {
+        return msg.errors[0].message;
+    }
+
+    if (msg.message) {
+        return msg.message;
+    }
+
+    // Normalize git error
+    return err.message.replace('Command failed: fatal: ', '').trim();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.insane" id="apidoc.element.gh.logger.insane">
+        function <span class="apidocSignatureSpan">gh.logger.</span>insane
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insane = function () {
+    if (!process.env.GH_VERBOSE_INSANE) {
+        return;
+    }
+
+    console.log.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        this.authorize(p);
+
+        var id = Math.floor(Math.random() * 10000000);
+        var begin = new Date().getTime();
+
+        return new Promise(function (resolve, reject) {
+            logger.debug('New request #' + id + ' started at ' + begin + ':\n' + method + ' &amp;#
+x27; + p.uri);
+            logger.<span class="apidocCodeKeywordSpan">insane</span>(p);
+            _request(p, function (error, response) {
+var end = new Date().getTime();
+logger.debug('End of request #' + id + ' at ' + end + ' (' + (end - begin) + 'ms)' + '
+; with status code: ' + (response &amp;&amp; response.statusCode));
+
+if (response) {
+    logger.insane('Response headers:');
+    logger.insane(response.headers);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.log" id="apidoc.element.gh.logger.log">
+        function <span class="apidocSignatureSpan">gh.logger.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+    console.log.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+exports.writeGlobalConfigCredentials = function (user, token) {
+var configPath = exports.getUserHomePath();
+
+exports.writeGlobalConfig('github_user', user);
+exports.writeGlobalConfig('github_token', token);
+logger.<span class="apidocCodeKeywordSpan">log</span>('Writing GH config data: ' + configPath);
+};
+
+// -- Plugins ------------------------------------------------------------------
+
+exports.addPluginConfig = function (config, plugin) {
+var pluginConfig,
+    userConfig;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.logTemplate" id="apidoc.element.gh.logger.logTemplate">
+        function <span class="apidocSignatureSpan">gh.logger.</span>logTemplate
+        <span class="apidocSignatureSpan">(source, map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logTemplate = function (source, map) {
+    console.log(logger.compileTemplate(source, map || {}));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    if (!fs.existsSync(templatePath)) {
+        templatePath = path.join(__dirname, 'cmds/templates', file);
+    }
+
+    source = fs.readFileSync(templatePath).toString();
+
+    logger.<span class="apidocCodeKeywordSpan">logTemplate</span>(stripHandlebarsNewLine(source), map);
+};
+
+logger.registerHelper = function (name, callback) {
+    handlebars.registerHelper(name, callback);
+};
+
+logger.registerHelpers_ = function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.logTemplateFile" id="apidoc.element.gh.logger.logTemplateFile">
+        function <span class="apidocSignatureSpan">gh.logger.</span>logTemplateFile
+        <span class="apidocSignatureSpan">(file, map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logTemplateFile = function (file, map) {
+    var templatePath,
+        source;
+
+    templatePath = path.join(file);
+
+    if (!fs.existsSync(templatePath)) {
+        templatePath = path.join(__dirname, 'cmds/templates', file);
+    }
+
+    source = fs.readFileSync(templatePath).toString();
+
+    logger.logTemplate(stripHandlebarsNewLine(source), map);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.registerHelper" id="apidoc.element.gh.logger.registerHelper">
+        function <span class="apidocSignatureSpan">gh.logger.</span>registerHelper
+        <span class="apidocSignatureSpan">(name, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerHelper = function (name, callback) {
+    handlebars.registerHelper(name, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+source = fs.readFileSync(templatePath).toString();
+
+logger.logTemplate(stripHandlebarsNewLine(source), map);
+};
+
+logger.registerHelper = function (name, callback) {
+handlebars.<span class="apidocCodeKeywordSpan">registerHelper</span>(name, callback);
+};
+
+logger.registerHelpers_ = function () {
+handlebars.registerHelper('date', function (date) {
+    return logger.getDuration(date);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.registerHelpers_" id="apidoc.element.gh.logger.registerHelpers_">
+        function <span class="apidocSignatureSpan">gh.logger.</span>registerHelpers_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerHelpers_ = function () {
+    handlebars.registerHelper('date', function (date) {
+        return logger.getDuration(date);
+    });
+
+    handlebars.registerHelper('compareLink', function () {
+        return this.options.github_host + this.options.user + '/' + this.options.repo +
+            '/compare/' + this.options.pullHeadSHA + '...' + this.options.currentSHA;
+    });
+
+    handlebars.registerHelper('forwardedLink', function () {
+        return this.options.github_host + this.options.fwd + '/' + this.options.repo + '/pull/' +
+            this.options.forwardedPull;
+    });
+
+    handlebars.registerHelper('link', function () {
+        return this.options.github_host + this.options.user + '/' + this.options.repo + '/pull/' +
+            this.options.number;
+    });
+
+    handlebars.registerHelper('submittedLink', function () {
+        return this.options.github_host + this.options.submit + '/' + this.options.repo + '/pull/' +
+            this.options.submittedPull;
+    });
+
+    handlebars.registerHelper('issueLink', function () {
+        return this.options.github_host + this.options.user + '/' + this.options.repo + '/issues/' +
+            this.options.number;
+    });
+
+    handlebars.registerHelper('gistLink', function () {
+        return this.options.github_gist_host + this.options.loggedUser + '/' + this.options.id;
+    });
+
+    handlebars.registerHelper('repoLink', function () {
+        return this.options.github_host + this.options.user + '/' + this.options.repo;
+    });
+
+    handlebars.registerHelper('wordwrap', function (text, padding, stripNewLines) {
+        var gutter = '';
+
+        if (stripNewLines !== false) {
+            text = text.replace(/[\r\n\s\t]+/g, ' ');
+        }
+
+        text = wrap(text).split('\n');
+
+        if (padding &gt; 0) {
+            gutter = (new Array(padding)).join(' ');
+        }
+
+        return text.join('\n' + gutter);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            gutter = (new Array(padding)).join(' ');
+        }
+
+        return text.join('\n' + gutter);
+    });
+};
+
+logger.<span class="apidocCodeKeywordSpan">registerHelpers_</span>();
+
+logger.colors = colors;
+module.exports = logger;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.logger.warn" id="apidoc.element.gh.logger.warn">
+        function <span class="apidocSignatureSpan">gh.logger.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function () {
+    arguments[0] = 'warning: ' + arguments[0];
+    console.error.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        result = exec.spawnSync('npm', ['root', '-g']);
+
+        if (result.stdout) {
+            path = result.stdout;
+            exports.writeGlobalConfig(PLUGINS_PATH_KEY, path);
+        }
+        else {
+            logger.<span class="apidocCodeKeywordSpan">warn</span>('Can\'t resolve plugins directory path.');
+        }
+    }
+
+    return path;
+};
+
+exports.getUserHomePath = function () {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.rest_api_client" id="apidoc.module.gh.rest_api_client">module gh.rest_api_client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.rest_api_client" id="apidoc.element.gh.rest_api_client.rest_api_client">
+        function <span class="apidocSignatureSpan">gh.</span>rest_api_client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RestApiClient(options) {
+    _classCallCheck(this, RestApiClient);
+
+    options = lodash.merge(this.DEFAULT_CONFIG, options);
+    this.options = options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.rest_api_client.prototype" id="apidoc.module.gh.rest_api_client.prototype">module gh.rest_api_client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.prototype.authorize" id="apidoc.element.gh.rest_api_client.prototype.authorize">
+        function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>authorize
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function authorize(p) {
+    var options = this.options;
+
+    if (p.oauth) {
+        p.oauth = options.oauth;
+        return;
+    }
+
+    if (typeof options.user === 'string') {
+        p.auth = {
+            'user': options.user,
+            'pass': options.password
+        };
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    followAllRedirects: true
+};
+
+if (params) {
+    p = lodash.merge(p, params);
+}
+
+this.<span class="apidocCodeKeywordSpan">authorize</span>(p);
+
+var id = Math.floor(Math.random() * 10000000);
+var begin = new Date().getTime();
+
+return new Promise(function (resolve, reject) {
+    logger.debug('New request #' + id + ' started at ' + begin + ':\n' + method + ' ' +
+p.uri);
+    logger.insane(p);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.prototype.delete" id="apidoc.element.gh.rest_api_client.prototype.delete">
+        function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>delete
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _delete() {
+    return this.request('DELETE', arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.prototype.encode" id="apidoc.element.gh.rest_api_client.prototype.encode">
+        function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>encode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode() {
+    return encodeURIComponent.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.prototype.get" id="apidoc.element.gh.rest_api_client.prototype.get">
+        function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get() {
+    return this.request('GET', arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.prototype.post" id="apidoc.element.gh.rest_api_client.prototype.post">
+        function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>post
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function post() {
+    return this.request('POST', arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.prototype.put" id="apidoc.element.gh.rest_api_client.prototype.put">
+        function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>put
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function put() {
+    return this.request('PUT', arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.prototype.request" id="apidoc.element.gh.rest_api_client.prototype.request">
+        function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>request
+        <span class="apidocSignatureSpan">(method, path, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(method, path, params) {
+    if (typeof path === 'object') {
+        var args = Array.from(path);
+        args.unshift(method);
+        return this.request.apply(this, args);
+    }
+
+    var options = this.options;
+
+    var p = {
+        strictSSL: options.strictSSL,
+        method: method,
+        uri: this.url(path),
+        json: true,
+        followAllRedirects: true
+    };
+
+    if (params) {
+        p = lodash.merge(p, params);
+    }
+
+    this.authorize(p);
+
+    var id = Math.floor(Math.random() * 10000000);
+    var begin = new Date().getTime();
+
+    return new Promise(function (resolve, reject) {
+        logger.debug('New request #' + id + ' started at ' + begin + ':\n' + method + ' ' + p.uri);
+        logger.insane(p);
+        _request(p, function (error, response) {
+            var end = new Date().getTime();
+            logger.debug('End of request #' + id + ' at ' + end + ' (' + (end - begin) + 'ms)' + ' with status code: ' + (response
+ &amp;&amp; response.statusCode));
+
+            if (response) {
+                logger.insane('Response headers:');
+                logger.insane(response.headers);
+                logger.debug('Response body');
+                logger.debug(response.body);
+            }
+
+            if (error) {
+                reject(error);
+                return;
+            }
+
+            if (response.statusCode &lt; 200 || response.statusCode &gt; 399) {
+                reject({
+                    error: response.statusCode + ' ' + http.STATUS_CODES[response.statusCode],
+                    code: response.statusCode,
+                    msg: http.STATUS_CODES[response.statusCode],
+                    response: response
+                });
+                return;
+            }
+
+            resolve(response);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+            resolve(response);
+        });
+    });
+};
+
+RestApiClient.prototype.get = function get() {
+    return this.<span class="apidocCodeKeywordSpan">request</span>('GET', arguments);
+};
+
+RestApiClient.prototype.post = function post() {
+    return this.request('POST', arguments);
+};
+
+RestApiClient.prototype.put = function put() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.rest_api_client.prototype.url" id="apidoc.element.gh.rest_api_client.prototype.url">
+        function <span class="apidocSignatureSpan">gh.rest_api_client.prototype.</span>url
+        <span class="apidocSignatureSpan">(pathname, query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function url(pathname, query) {
+    var options = this.options;
+    var uri = _url.format({
+        protocol: options.protocol,
+        hostname: options.host,
+        port: options.port,
+        pathname: options.base + pathname,
+        query: query
+    });
+
+    return decodeURIComponent(uri);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+var options = this.options;
+
+var p = {
+    strictSSL: options.strictSSL,
+    method: method,
+    uri: this.<span class="apidocCodeKeywordSpan">url</span>(path),
+    json: true,
+    followAllRedirects: true
+};
+
+if (params) {
+    p = lodash.merge(p, params);
+}
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gh.tracker" id="apidoc.module.gh.tracker">module gh.tracker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gh.tracker.resolveCommand" id="apidoc.element.gh.tracker.resolveCommand">
+        function <span class="apidocSignatureSpan">gh.tracker.</span>resolveCommand
+        <span class="apidocSignatureSpan">(cmd, commandDetails)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveCommand = function (cmd, commandDetails) {
+    var cmdAnonymizer;
+
+    if (!commandDetails) {
+        return cmd.join(' ').replace(/\w+/g, redaction);
+    }
+
+    cmdAnonymizer = new CmdAnonymizer(commandDetails, redaction);
+
+    return cmdAnonymizer.resolveToString(cmd);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    cmdAnonymizer = new CmdAnonymizer(commandDetails, redaction);
+
+    return cmdAnonymizer.resolveToString(cmd);
+};
+
+tracker.trackCommand = function (cmd, commandDetails) {
+    var tracking = pkg.name + ' ' + this.<span class="apidocCodeKeywordSpan">resolveCommand</span>(cmd, commandDetails
+);
+
+    this.track(tracking.replace(/ /g, '%20'));
+};
+
+module.exports = tracker;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gh.tracker.trackCommand" id="apidoc.element.gh.tracker.trackCommand">
+        function <span class="apidocSignatureSpan">gh.tracker.</span>trackCommand
+        <span class="apidocSignatureSpan">(cmd, commandDetails)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trackCommand = function (cmd, commandDetails) {
+    var tracking = pkg.name + ' ' + this.resolveCommand(cmd, commandDetails);
+
+    this.track(tracking.replace(/ /g, '%20'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    (cooked.indexOf('--help') &gt;= 0)) {
+    module = 'help';
+}
+
+Command = loadCommand(module);
+
+if (!Command) {
+    tracker.<span class="apidocCodeKeywordSpan">trackCommand</span>(remain);
+    logger.error('Command not found');
+    return;
+}
+
+options = nopt(
+    Command.DETAILS.options,
+    Command.DETAILS.shorthands, process.argv, 2);
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
